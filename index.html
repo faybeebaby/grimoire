@@ -468,14 +468,6 @@ body{
     </div>
   </div>
 
-  <!-- LOCAL DATA NOTICE -->
-  <div class="notice" id="local-notice">
-    <strong>Note —</strong> This standalone file uses your browser's localStorage to store entries.
-    To share the Grimoire with your community, either host this file on a web server or use the
-    live version inside Claude which uses shared cloud storage. See the README section at the
-    bottom of this page for hosting instructions.
-  </div>
-
   <!-- FILTERS -->
   <div class="filter-section">
     <div class="filter-row">
@@ -523,40 +515,6 @@ body{
       <a class="footer-channel" href="https://twitch.tv/faybee_baby" target="_blank" rel="noopener">twitch.tv/faybee_baby</a>
     </div>
     <div class="footer-ornament">✦ · ✦ · ✦</div>
-
-    <!-- README / SETUP INSTRUCTIONS -->
-    <details style="margin-top:40px;text-align:left;border:0.5px solid var(--border);border-radius:10px;padding:18px 20px;">
-      <summary style="font-family:'Cinzel',serif;font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--text-muted);cursor:pointer;list-style:none;">
-        ✦ Setup &amp; Hosting Instructions
-      </summary>
-      <div style="margin-top:16px;font-family:'IM Fell English',serif;font-size:14px;color:var(--text-dim);line-height:1.9;">
-        <p style="margin-bottom:12px;">
-          <strong style="font-family:'Cinzel',serif;font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold-dim);">Step 1 — Customise</strong><br>
-          Open this file in a text editor. Search for <code style="background:var(--surface);padding:1px 6px;border-radius:3px;font-size:12px;">faybee_baby</code>
-          and replace with your actual Twitch username. Do the same for any other placeholder text.
-        </p>
-        <p style="margin-bottom:12px;">
-          <strong style="font-family:'Cinzel',serif;font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold-dim);">Step 2 — Add your entries</strong><br>
-          Find the <code style="background:var(--surface);padding:1px 6px;border-radius:3px;font-size:12px;">GRIMOIRE_DATA</code> object near the top of the
-          <code style="background:var(--surface);padding:1px 6px;border-radius:3px;font-size:12px;">&lt;script&gt;</code> section. Replace the sample entries with your real ones,
-          or keep them as a starting point and add more in the same format.
-        </p>
-        <p style="margin-bottom:12px;">
-          <strong style="font-family:'Cinzel',serif;font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold-dim);">Step 3 — Host it (free options)</strong><br>
-          • <strong>GitHub Pages</strong> — free, reliable, custom domain support. Create a repo, drop this file in as <code style="background:var(--surface);padding:1px 6px;border-radius:3px;font-size:12px;">index.html</code>, enable Pages in settings.<br>
-          • <strong>Netlify Drop</strong> — drag this file to netlify.com/drop. Instant live URL, no account needed.<br>
-          • <strong>Carrd</strong> — if you already have a Carrd site, embed via custom HTML.<br>
-          • <strong>Twitch Panel</strong> — add the hosted URL as a link in your channel's About panels.
-        </p>
-        <p>
-          <strong style="font-family:'Cinzel',serif;font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold-dim);">Updating between streams</strong><br>
-          Edit the <code style="background:var(--surface);padding:1px 6px;border-radius:3px;font-size:12px;">GRIMOIRE_DATA</code> array in this file after each session and re-upload.
-          For a fully live version that updates automatically, use the Grimoire inside Claude — it uses
-          cloud storage that updates in real time for all viewers.
-        </p>
-      </div>
-    </details>
-  </footer>
 
 </div><!-- /page -->
 
