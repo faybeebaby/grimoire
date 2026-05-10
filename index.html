@@ -30,168 +30,171 @@
 }
 
 html{scroll-behavior:smooth}
-body{
-  background:var(--void);
-  color:var(--text);
-  font-family:'IM Fell English',serif;
-  min-height:100vh;
-  overflow-x:hidden;
-}
+body{background:var(--void);color:var(--text);font-family:'IM Fell English',serif;min-height:100vh;overflow-x:hidden}
 
-#star-canvas{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:0;}
-.vignette{position:fixed;inset:0;pointer-events:none;z-index:1;background:radial-gradient(ellipse at center,transparent 40%,rgba(6,4,15,0.72) 100%);}
+#star-canvas{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:0}
+.vignette{position:fixed;inset:0;pointer-events:none;z-index:1;background:radial-gradient(ellipse at center,transparent 40%,rgba(6,4,15,0.72) 100%)}
 
-.page{position:relative;z-index:2;max-width:900px;margin:0 auto;padding:0 24px 100px;}
+.page{position:relative;z-index:2;max-width:900px;margin:0 auto;padding:0 24px 100px}
 
-.hero{text-align:center;padding:60px 0 40px;position:relative;}
-.hero-ornament{display:flex;align-items:center;justify-content:center;gap:18px;margin-bottom:22px;opacity:0;animation:fade-down .8s .1s forwards;}
-.ornament-line{flex:1;max-width:140px;height:0.5px;background:linear-gradient(to right,transparent,var(--border-gold));}
-.ornament-line.right{background:linear-gradient(to left,transparent,var(--border-gold));}
-.ornament-glyph{color:var(--gold-dim);font-size:13px;letter-spacing:5px;}
-.hero-eyebrow{font-family:'Cinzel',serif;font-size:9px;letter-spacing:.38em;text-transform:uppercase;color:var(--star);margin-bottom:16px;opacity:0;animation:fade-down .7s .2s forwards;}
-.hero-title{font-family:'Cinzel Decorative',serif;font-size:48px;font-weight:700;color:var(--gold);letter-spacing:.04em;line-height:1.05;text-shadow:0 0 70px rgba(200,169,110,.22),0 0 140px rgba(200,169,110,.1);opacity:0;animation:fade-down .8s .3s forwards;}
-.hero-title span{display:block;font-size:15px;font-weight:400;letter-spacing:.32em;color:var(--gold-dim);margin-top:8px;}
-.hero-subtitle{font-family:'IM Fell English',serif;font-style:italic;font-size:17px;color:var(--text-dim);margin-top:18px;line-height:1.9;opacity:0;animation:fade-down .7s .45s forwards;}
-.hero-meta{display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;margin-top:22px;opacity:0;animation:fade-down .7s .55s forwards;}
-.hero-meta-item{font-family:'Cinzel',serif;font-size:9px;letter-spacing:.15em;text-transform:uppercase;color:var(--text-muted);display:flex;align-items:center;gap:7px;}
-.hero-meta-sep{color:var(--border-gold);font-size:11px;}
-.moon-dot{width:5px;height:5px;border-radius:50%;background:var(--gold-dim);animation:moon-pulse 3s ease-in-out infinite;}
+.hero{text-align:center;padding:60px 0 40px;position:relative}
+.hero-ornament{display:flex;align-items:center;justify-content:center;gap:18px;margin-bottom:22px;opacity:0;animation:fade-down .8s .1s forwards}
+.ornament-line{flex:1;max-width:140px;height:0.5px;background:linear-gradient(to right,transparent,var(--border-gold))}
+.ornament-line.right{background:linear-gradient(to left,transparent,var(--border-gold))}
+.ornament-glyph{color:var(--gold-dim);font-size:13px;letter-spacing:5px}
+.hero-eyebrow{font-family:'Cinzel',serif;font-size:9px;letter-spacing:.38em;text-transform:uppercase;color:var(--star);margin-bottom:16px;opacity:0;animation:fade-down .7s .2s forwards}
+.hero-title{font-family:'Cinzel Decorative',serif;font-size:48px;font-weight:700;color:var(--gold);letter-spacing:.04em;line-height:1.05;text-shadow:0 0 70px rgba(200,169,110,.22),0 0 140px rgba(200,169,110,.1);opacity:0;animation:fade-down .8s .3s forwards}
+.hero-title span{display:block;font-size:15px;font-weight:400;letter-spacing:.32em;color:var(--gold-dim);margin-top:8px}
+.hero-subtitle{font-family:'IM Fell English',serif;font-style:italic;font-size:17px;color:var(--text-dim);margin-top:18px;line-height:1.9;opacity:0;animation:fade-down .7s .45s forwards}
+.hero-meta{display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;margin-top:22px;opacity:0;animation:fade-down .7s .55s forwards}
+.hero-meta-item{font-family:'Cinzel',serif;font-size:9px;letter-spacing:.15em;text-transform:uppercase;color:var(--text-muted);display:flex;align-items:center;gap:7px}
+.hero-meta-sep{color:var(--border-gold);font-size:11px}
+.moon-dot{width:5px;height:5px;border-radius:50%;background:var(--gold-dim);animation:moon-pulse 3s ease-in-out infinite}
 @keyframes moon-pulse{0%,100%{opacity:.35}50%{opacity:1}}
-.hero-divider{width:100%;height:1px;margin:30px 0 0;background:linear-gradient(to right,transparent,var(--border-gold),rgba(200,160,100,.06),var(--border-gold),transparent);opacity:0;animation:fade-in .9s .65s forwards;}
+.hero-divider{width:100%;height:1px;margin:30px 0 0;background:linear-gradient(to right,transparent,var(--border-gold),rgba(200,160,100,.06),var(--border-gold),transparent);opacity:0;animation:fade-in .9s .65s forwards}
 
-.stat-row{display:flex;gap:0;border:0.5px solid var(--border-gold);border-radius:12px;overflow:hidden;margin:28px 0 24px;opacity:0;animation:fade-up .7s .72s forwards;}
-.stat-cell{flex:1;padding:14px 16px;text-align:center;border-right:0.5px solid var(--border-gold);}
-.stat-cell:last-child{border-right:none;}
-.stat-num{font-family:'Cinzel Decorative',serif;font-size:24px;color:var(--gold);display:block;margin-bottom:3px;}
-.stat-label{font-family:'Cinzel',serif;font-size:8px;letter-spacing:.14em;text-transform:uppercase;color:var(--text-muted);}
+.stat-row{display:flex;gap:0;border:0.5px solid var(--border-gold);border-radius:12px;overflow:hidden;margin:28px 0 24px;opacity:0;animation:fade-up .7s .72s forwards}
+.stat-cell{flex:1;padding:14px 16px;text-align:center;border-right:0.5px solid var(--border-gold)}
+.stat-cell:last-child{border-right:none}
+.stat-num{font-family:'Cinzel Decorative',serif;font-size:24px;color:var(--gold);display:block;margin-bottom:3px}
+.stat-label{font-family:'Cinzel',serif;font-size:8px;letter-spacing:.14em;text-transform:uppercase;color:var(--text-muted)}
 
-.filter-section{padding:4px 0 18px;display:flex;flex-direction:column;gap:14px;opacity:0;animation:fade-up .7s .78s forwards;}
-.filter-row{display:flex;gap:7px;flex-wrap:wrap;align-items:center;}
-.filter-label{font-family:'Cinzel',serif;font-size:8px;letter-spacing:.18em;text-transform:uppercase;color:var(--text-muted);white-space:nowrap;}
-.chip{font-family:'Cinzel',serif;font-size:8.5px;letter-spacing:.1em;text-transform:uppercase;padding:5px 14px;border-radius:20px;border:0.5px solid var(--border);color:var(--text-muted);cursor:pointer;background:transparent;transition:all .2s;}
-.chip:hover{color:var(--star-dim);border-color:rgba(200,160,255,.3);}
-.chip.active{color:var(--gold);border-color:var(--border-gold);background:rgba(200,169,110,.07);}
-.search-wrap{position:relative;flex:1;min-width:220px;}
-.search-input{width:100%;background:var(--deep);border:0.5px solid var(--border);border-radius:8px;color:var(--text);font-family:'IM Fell English',serif;font-style:italic;font-size:15px;padding:9px 14px 9px 36px;outline:none;transition:border-color .2s;}
-.search-input:focus{border-color:rgba(200,160,255,.4);}
-.search-input::placeholder{color:var(--text-muted);}
-.search-icon{position:absolute;left:12px;top:50%;transform:translateY(-50%);font-size:14px;opacity:.5;pointer-events:none;font-style:normal;}
-.filter-divider{height:0.5px;background:linear-gradient(to right,var(--border-gold),transparent);opacity:.5;}
+.filter-section{padding:4px 0 18px;display:flex;flex-direction:column;gap:14px;opacity:0;animation:fade-up .7s .78s forwards}
+.filter-row{display:flex;gap:7px;flex-wrap:wrap;align-items:center}
+.filter-label{font-family:'Cinzel',serif;font-size:8px;letter-spacing:.18em;text-transform:uppercase;color:var(--text-muted);white-space:nowrap}
+.chip{font-family:'Cinzel',serif;font-size:8.5px;letter-spacing:.1em;text-transform:uppercase;padding:5px 14px;border-radius:20px;border:0.5px solid var(--border);color:var(--text-muted);cursor:pointer;background:transparent;transition:all .2s}
+.chip:hover{color:var(--star-dim);border-color:rgba(200,160,255,.3)}
+.chip.active{color:var(--gold);border-color:var(--border-gold);background:rgba(200,169,110,.07)}
+.search-wrap{position:relative;flex:1;min-width:220px}
+.search-input{width:100%;background:var(--deep);border:0.5px solid var(--border);border-radius:8px;color:var(--text);font-family:'IM Fell English',serif;font-style:italic;font-size:15px;padding:9px 14px 9px 36px;outline:none;transition:border-color .2s}
+.search-input:focus{border-color:rgba(200,160,255,.4)}
+.search-input::placeholder{color:var(--text-muted)}
+.search-icon{position:absolute;left:12px;top:50%;transform:translateY(-50%);font-size:14px;opacity:.5;pointer-events:none;font-style:normal}
+.filter-divider{height:0.5px;background:linear-gradient(to right,var(--border-gold),transparent);opacity:.5}
 
-.entries-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(360px,1fr));gap:14px;opacity:0;animation:fade-up .7s .88s forwards;}
+.entries-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(360px,1fr));gap:14px;opacity:0;animation:fade-up .7s .88s forwards}
 
-.entry-card{background:var(--deep);border:0.5px solid var(--border);border-radius:12px;overflow:hidden;cursor:pointer;transition:all .25s;position:relative;}
-.entry-card::before{content:'';position:absolute;inset:0;border-radius:12px;background:radial-gradient(ellipse at top left,rgba(200,169,110,.04),transparent 65%);pointer-events:none;}
-.entry-card:hover{border-color:rgba(200,160,100,.35);transform:translateY(-2px);box-shadow:0 10px 36px rgba(0,0,0,.45);}
-.entry-card.expanded{border-color:var(--border-gold);grid-column:1 / -1;}
+.entry-card{background:var(--deep);border:0.5px solid var(--border);border-radius:12px;overflow:hidden;cursor:pointer;transition:all .25s;position:relative}
+.entry-card::before{content:'';position:absolute;inset:0;border-radius:12px;background:radial-gradient(ellipse at top left,rgba(200,169,110,.04),transparent 65%);pointer-events:none}
+.entry-card:hover{border-color:rgba(200,160,100,.35);transform:translateY(-2px);box-shadow:0 10px 36px rgba(0,0,0,.45)}
+.entry-card.expanded{border-color:var(--border-gold);grid-column:1 / -1}
 
-.card-top{padding:17px 19px 13px;display:flex;gap:13px;align-items:flex-start;}
-.type-orb{width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0;margin-top:1px;}
-.orb-lore{background:rgba(160,100,255,.18);}
-.orb-spell{background:rgba(125,232,160,.15);}
-.orb-bestiary{background:rgba(232,125,125,.15);}
-.orb-mystery{background:rgba(100,180,255,.15);}
-.orb-record{background:rgba(200,169,110,.15);}
+.card-top{padding:17px 19px 13px;display:flex;gap:13px;align-items:flex-start}
+.type-orb{width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0;margin-top:1px}
+.orb-lore{background:rgba(160,100,255,.18)}
+.orb-spell{background:rgba(125,232,160,.15)}
+.orb-bestiary{background:rgba(232,125,125,.15)}
+.orb-mystery{background:rgba(100,180,255,.15)}
+.orb-record{background:rgba(200,169,110,.15)}
 
-.card-meta{flex:1;min-width:0;}
-.card-type-label{font-family:'Cinzel',serif;font-size:8px;letter-spacing:.18em;text-transform:uppercase;color:var(--star-dim);margin-bottom:4px;}
-.card-title{font-family:'Cinzel',serif;font-size:13.5px;font-weight:600;color:var(--gold);line-height:1.35;}
-.card-game{font-family:'Cinzel',serif;font-size:9px;letter-spacing:.07em;color:var(--star);margin-top:4px;}
-.card-session{font-family:'IM Fell English',serif;font-style:italic;font-size:11.5px;color:var(--text-muted);margin-top:2px;}
+.card-meta{flex:1;min-width:0}
+.card-type-label{font-family:'Cinzel',serif;font-size:8px;letter-spacing:.18em;text-transform:uppercase;color:var(--star-dim);margin-bottom:4px}
+.card-title{font-family:'Cinzel',serif;font-size:13.5px;font-weight:600;color:var(--gold);line-height:1.35}
+.card-game{font-family:'Cinzel',serif;font-size:9px;letter-spacing:.07em;color:var(--star);margin-top:4px}
+.card-session{font-family:'IM Fell English',serif;font-style:italic;font-size:11.5px;color:var(--text-muted);margin-top:2px}
 
-.card-peek{padding:0 19px 15px;font-family:'IM Fell English',serif;font-size:13.5px;color:var(--text-dim);line-height:1.75;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}
-.expand-hint{padding:0 19px 13px;font-family:'Cinzel',serif;font-size:8px;letter-spacing:.12em;text-transform:uppercase;color:var(--text-muted);display:flex;align-items:center;gap:7px;}
-.expand-hint::before,.expand-hint::after{content:'';flex:1;height:0.5px;background:var(--border);}
+.card-peek{padding:0 19px 15px;font-family:'IM Fell English',serif;font-size:13.5px;color:var(--text-dim);line-height:1.75;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.expand-hint{padding:0 19px 13px;font-family:'Cinzel',serif;font-size:8px;letter-spacing:.12em;text-transform:uppercase;color:var(--text-muted);display:flex;align-items:center;gap:7px}
+.expand-hint::before,.expand-hint::after{content:'';flex:1;height:0.5px;background:var(--border)}
 
-.card-body{margin:0 19px;padding:16px 0 4px;font-family:'IM Fell English',serif;font-size:15.5px;line-height:1.95;color:var(--ink);white-space:pre-wrap;border-top:0.5px solid var(--border);}
-.card-tags{display:flex;flex-wrap:wrap;gap:5px;padding:12px 19px 0;}
-.card-tag{font-family:'Cinzel',serif;font-size:7.5px;letter-spacing:.1em;text-transform:uppercase;padding:2px 8px;border-radius:3px;border:0.5px solid var(--border);color:var(--star-dim);}
-.card-footer{display:flex;justify-content:space-between;align-items:center;padding:11px 19px 17px;flex-wrap:wrap;gap:10px;}
-.card-scribe,.card-date{font-family:'IM Fell English',serif;font-style:italic;font-size:11.5px;color:var(--text-muted);}
+.card-body{margin:0 19px;padding:16px 0 4px;font-family:'IM Fell English',serif;font-size:15.5px;line-height:1.95;color:var(--ink);white-space:pre-wrap;border-top:0.5px solid var(--border)}
+.card-tags{display:flex;flex-wrap:wrap;gap:5px;padding:12px 19px 0}
+.card-tag{font-family:'Cinzel',serif;font-size:7.5px;letter-spacing:.1em;text-transform:uppercase;padding:2px 8px;border-radius:3px;border:0.5px solid var(--border);color:var(--star-dim)}
+.card-footer{display:flex;justify-content:space-between;align-items:center;padding:11px 19px 17px;flex-wrap:wrap;gap:10px}
+.card-scribe,.card-date{font-family:'IM Fell English',serif;font-style:italic;font-size:11.5px;color:var(--text-muted)}
 
-.mysteries-banner{margin:30px 0 0;background:rgba(100,180,255,.05);border:0.5px solid rgba(100,180,255,.22);border-radius:12px;padding:20px 24px;}
-.banner-title{font-family:'Cinzel',serif;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:rgba(140,200,255,.75);margin-bottom:14px;display:flex;align-items:center;gap:9px;}
-.banner-title::after{content:'';flex:1;height:0.5px;background:rgba(100,180,255,.2);}
-.mystery-row{display:flex;gap:11px;align-items:flex-start;padding:9px 0;border-bottom:0.5px solid rgba(100,180,255,.1);}
-.mystery-row:last-child{border-bottom:none;padding-bottom:0;}
-.mystery-glyph{font-size:15px;flex-shrink:0;margin-top:1px;}
-.mystery-title{font-family:'IM Fell English',serif;font-style:italic;font-size:14px;color:var(--text-dim);line-height:1.65;}
-.mystery-sub{font-family:'Cinzel',serif;font-size:8px;letter-spacing:.1em;text-transform:uppercase;color:var(--text-muted);margin-top:2px;}
+.mysteries-banner{margin:30px 0 0;background:rgba(100,180,255,.05);border:0.5px solid rgba(100,180,255,.22);border-radius:12px;padding:20px 24px}
+.banner-title{font-family:'Cinzel',serif;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:rgba(140,200,255,.75);margin-bottom:14px;display:flex;align-items:center;gap:9px}
+.banner-title::after{content:'';flex:1;height:0.5px;background:rgba(100,180,255,.2)}
+.mystery-row{display:flex;gap:11px;align-items:flex-start;padding:9px 0;border-bottom:0.5px solid rgba(100,180,255,.1)}
+.mystery-row:last-child{border-bottom:none;padding-bottom:0}
+.mystery-glyph{font-size:15px;flex-shrink:0;margin-top:1px}
+.mystery-title{font-family:'IM Fell English',serif;font-style:italic;font-size:14px;color:var(--text-dim);line-height:1.65}
+.mystery-sub{font-family:'Cinzel',serif;font-size:8px;letter-spacing:.1em;text-transform:uppercase;color:var(--text-muted);margin-top:2px}
 
-.session-banner{margin:20px 0 0;background:rgba(200,169,110,.05);border:0.5px solid var(--border-gold);border-radius:12px;padding:20px 24px;}
-.session-banner-title{font-family:'Cinzel',serif;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-dim);margin-bottom:14px;display:flex;align-items:center;gap:9px;}
-.session-banner-title::after{content:'';flex:1;height:0.5px;background:var(--border-gold);opacity:.5;}
-.session-name{font-family:'Cinzel',serif;font-size:15px;color:var(--gold);margin-bottom:4px;}
-.session-game{font-family:'Cinzel',serif;font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--star);margin-bottom:16px;}
-.session-field{margin-bottom:12px;}
-.session-field-label{font-family:'Cinzel',serif;font-size:8px;letter-spacing:.15em;text-transform:uppercase;color:var(--star-dim);margin-bottom:4px;}
-.session-field-body{font-family:'IM Fell English',serif;font-size:14.5px;color:var(--text-dim);line-height:1.75;}
-.session-carry{margin-top:12px;padding:10px 14px;background:rgba(100,180,255,.06);border:0.5px solid rgba(100,180,255,.2);border-radius:8px;font-family:'IM Fell English',serif;font-style:italic;font-size:13.5px;color:var(--text-dim);}
+.session-banner{margin:20px 0 0;background:rgba(200,169,110,.05);border:0.5px solid var(--border-gold);border-radius:12px;padding:20px 24px}
+.session-banner-title{font-family:'Cinzel',serif;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-dim);margin-bottom:14px;display:flex;align-items:center;gap:9px}
+.session-banner-title::after{content:'';flex:1;height:0.5px;background:var(--border-gold);opacity:.5}
+.session-name{font-family:'Cinzel',serif;font-size:15px;color:var(--gold);margin-bottom:4px}
+.session-game{font-family:'Cinzel',serif;font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--star);margin-bottom:16px}
+.session-field{margin-bottom:12px}
+.session-field-label{font-family:'Cinzel',serif;font-size:8px;letter-spacing:.15em;text-transform:uppercase;color:var(--star-dim);margin-bottom:4px}
+.session-field-body{font-family:'IM Fell English',serif;font-size:14.5px;color:var(--text-dim);line-height:1.75}
+.session-carry{margin-top:12px;padding:10px 14px;background:rgba(100,180,255,.06);border:0.5px solid rgba(100,180,255,.2);border-radius:8px;font-family:'IM Fell English',serif;font-style:italic;font-size:13.5px;color:var(--text-dim)}
 
-.empty{text-align:center;padding:72px 20px;grid-column:1 / -1;border:0.5px dashed var(--border);border-radius:12px;}
-.empty-glyph{font-size:38px;margin-bottom:14px;opacity:.4;display:block;}
-.empty-title{font-family:'Cinzel',serif;font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:var(--text-muted);margin-bottom:8px;}
-.empty-sub{font-family:'IM Fell English',serif;font-style:italic;font-size:14px;color:var(--text-muted);}
+.empty{text-align:center;padding:72px 20px;grid-column:1 / -1;border:0.5px dashed var(--border);border-radius:12px}
+.empty-glyph{font-size:38px;margin-bottom:14px;opacity:.4;display:block}
+.empty-title{font-family:'Cinzel',serif;font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:var(--text-muted);margin-bottom:8px}
+.empty-sub{font-family:'IM Fell English',serif;font-style:italic;font-size:14px;color:var(--text-muted)}
 
-.loading{text-align:center;padding:80px 20px;grid-column:1/-1;font-family:'Cinzel',serif;font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--text-muted);animation:breathe 2.2s ease-in-out infinite;}
+.loading{text-align:center;padding:80px 20px;grid-column:1/-1;font-family:'Cinzel',serif;font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--text-muted);animation:breathe 2.2s ease-in-out infinite}
 @keyframes breathe{0%,100%{opacity:.4}50%{opacity:.95}}
 
-.page-footer{text-align:center;padding:48px 0 0;border-top:0.5px solid var(--border);margin-top:56px;}
-.footer-title{font-family:'Cinzel Decorative',serif;font-size:14px;color:var(--gold-dim);letter-spacing:.1em;margin-bottom:8px;}
-.footer-sub{font-family:'IM Fell English',serif;font-style:italic;font-size:14px;color:var(--text-muted);line-height:1.9;}
-.footer-channel{color:var(--gold-dim);font-style:normal;}
-.footer-ornament{margin-top:18px;color:var(--gold-dim);font-size:11px;letter-spacing:9px;opacity:.5;}
+.page-footer{text-align:center;padding:48px 0 0;border-top:0.5px solid var(--border);margin-top:56px}
+.footer-title{font-family:'Cinzel Decorative',serif;font-size:14px;color:var(--gold-dim);letter-spacing:.1em;margin-bottom:8px}
+.footer-sub{font-family:'IM Fell English',serif;font-style:italic;font-size:14px;color:var(--text-muted);line-height:1.9}
+.footer-channel{color:var(--gold-dim);font-style:normal}
+.footer-ornament{margin-top:18px;color:var(--gold-dim);font-size:11px;letter-spacing:9px;opacity:.5}
 
 /* ADMIN MODE */
-.admin-bar{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(20,12,40,0.92);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:0.5px solid var(--border-gold);padding:10px 20px;display:flex;align-items:center;gap:12px;flex-wrap:wrap;}
-.admin-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:7px;}
-.admin-dot{width:7px;height:7px;border-radius:50%;background:#7de8a0;animation:moon-pulse 2s ease-in-out infinite;}
-.admin-actions{display:flex;gap:7px;margin-left:auto;flex-wrap:wrap;}
-.admin-btn{font-family:'Cinzel',serif;font-size:9px;letter-spacing:.12em;text-transform:uppercase;padding:6px 14px;border-radius:6px;border:0.5px solid var(--border);background:transparent;color:var(--text-dim);cursor:pointer;transition:all .15s;}
-.admin-btn:hover{color:var(--gold);border-color:var(--border-gold);background:rgba(200,169,110,0.06);}
-.admin-btn.primary{background:rgba(200,169,110,0.1);border-color:var(--border-gold);color:var(--gold);}
-.admin-btn.primary:hover{background:rgba(200,169,110,0.18);}
-.admin-active .page{padding-top:60px;}
+.admin-bar{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(20,12,40,0.92);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:0.5px solid var(--border-gold);padding:10px 20px;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.admin-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:7px}
+.admin-dot{width:7px;height:7px;border-radius:50%;background:#7de8a0;animation:moon-pulse 2s ease-in-out infinite}
+.admin-dot.offline{background:#e87d7d}
+.admin-actions{display:flex;gap:7px;margin-left:auto;flex-wrap:wrap}
+.admin-btn{font-family:'Cinzel',serif;font-size:9px;letter-spacing:.12em;text-transform:uppercase;padding:6px 14px;border-radius:6px;border:0.5px solid var(--border);background:transparent;color:var(--text-dim);cursor:pointer;transition:all .15s}
+.admin-btn:hover:not(:disabled){color:var(--gold);border-color:var(--border-gold);background:rgba(200,169,110,0.06)}
+.admin-btn:disabled{opacity:0.4;cursor:not-allowed}
+.admin-btn.primary{background:rgba(200,169,110,0.1);border-color:var(--border-gold);color:var(--gold)}
+.admin-btn.primary:hover:not(:disabled){background:rgba(200,169,110,0.18)}
+.admin-active .page{padding-top:60px}
 
-.card-admin{display:none;gap:6px;}
-.admin-active .card-admin{display:flex;}
-.card-admin-btn{font-family:'Cinzel',serif;font-size:8px;letter-spacing:.1em;text-transform:uppercase;padding:3px 9px;border-radius:4px;border:0.5px solid var(--border);background:transparent;color:var(--text-muted);cursor:pointer;transition:all .15s;}
-.card-admin-btn:hover{color:var(--gold);border-color:var(--border-gold);}
-.card-admin-btn.danger:hover{color:#e87d7d;border-color:rgba(232,125,125,0.4);background:rgba(232,125,125,0.08);}
+.card-admin{display:none;gap:6px}
+.admin-active .card-admin{display:flex}
+.card-admin-btn{font-family:'Cinzel',serif;font-size:8px;letter-spacing:.1em;text-transform:uppercase;padding:3px 9px;border-radius:4px;border:0.5px solid var(--border);background:transparent;color:var(--text-muted);cursor:pointer;transition:all .15s}
+.card-admin-btn:hover{color:var(--gold);border-color:var(--border-gold)}
+.card-admin-btn.danger:hover{color:#e87d7d;border-color:rgba(232,125,125,0.4);background:rgba(232,125,125,0.08)}
 
-.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.85);display:none;align-items:flex-start;justify-content:center;z-index:100;padding:40px 20px;overflow-y:auto;}
-.modal-overlay.open{display:flex;}
-.modal{background:var(--deep);border:0.5px solid var(--border-gold);border-radius:14px;padding:26px;width:100%;max-width:600px;margin-top:20px;}
-.modal-title{font-family:'Cinzel Decorative',serif;font-size:18px;color:var(--gold);margin-bottom:6px;letter-spacing:.04em;}
-.modal-subtitle{font-family:'IM Fell English',serif;font-style:italic;font-size:13px;color:var(--text-muted);margin-bottom:20px;}
-.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
-.form-row{margin-bottom:12px;}
-.form-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--star);display:block;margin-bottom:5px;}
-.form-input,.form-textarea,.form-select{width:100%;background:var(--surface);border:0.5px solid var(--border);border-radius:7px;color:var(--text);font-family:'IM Fell English',serif;font-size:14px;padding:9px 12px;outline:none;transition:border-color .15s;-webkit-appearance:none;}
-.form-input:focus,.form-textarea:focus,.form-select:focus{border-color:rgba(200,160,255,.45);}
-.form-textarea{resize:vertical;min-height:140px;line-height:1.7;}
-.form-select option{background:#1a1530;}
-.form-help{font-family:'IM Fell English',serif;font-style:italic;font-size:12px;color:var(--text-muted);margin-top:4px;line-height:1.5;}
-.modal-actions{display:flex;gap:8px;justify-content:flex-end;margin-top:18px;flex-wrap:wrap;}
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.85);display:none;align-items:flex-start;justify-content:center;z-index:100;padding:40px 20px;overflow-y:auto}
+.modal-overlay.open{display:flex}
+.modal{background:var(--deep);border:0.5px solid var(--border-gold);border-radius:14px;padding:26px;width:100%;max-width:600px;margin-top:20px}
+.modal-title{font-family:'Cinzel Decorative',serif;font-size:18px;color:var(--gold);margin-bottom:6px;letter-spacing:.04em}
+.modal-subtitle{font-family:'IM Fell English',serif;font-style:italic;font-size:13px;color:var(--text-muted);margin-bottom:20px}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.form-row{margin-bottom:12px}
+.form-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--star);display:block;margin-bottom:5px}
+.form-input,.form-textarea,.form-select{width:100%;background:var(--surface);border:0.5px solid var(--border);border-radius:7px;color:var(--text);font-family:'IM Fell English',serif;font-size:14px;padding:9px 12px;outline:none;transition:border-color .15s;-webkit-appearance:none}
+.form-input:focus,.form-textarea:focus,.form-select:focus{border-color:rgba(200,160,255,.45)}
+.form-textarea{resize:vertical;min-height:140px;line-height:1.7}
+.form-select option{background:#1a1530}
+.form-help{font-family:'IM Fell English',serif;font-style:italic;font-size:12px;color:var(--text-muted);margin-top:4px;line-height:1.5}
+.modal-actions{display:flex;gap:8px;justify-content:flex-end;margin-top:18px;flex-wrap:wrap}
 
-.export-text{width:100%;min-height:300px;background:#06040f;border:0.5px solid var(--border);border-radius:8px;padding:14px;font-family:ui-monospace,'SF Mono',Consolas,monospace;font-size:11.5px;line-height:1.7;color:#d4c8a8;resize:vertical;outline:none;}
+.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:var(--surface);border:0.5px solid var(--border-gold);border-radius:8px;padding:11px 22px;font-family:'Cinzel',serif;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);opacity:0;transition:opacity .3s;pointer-events:none;z-index:200;white-space:nowrap;max-width:90vw;text-align:center}
+.toast.show{opacity:1}
+.toast.error{border-color:rgba(232,125,125,0.5);color:#e8a0a0}
 
-.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:var(--surface);border:0.5px solid var(--border-gold);border-radius:8px;padding:11px 22px;font-family:'Cinzel',serif;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);opacity:0;transition:opacity .3s;pointer-events:none;z-index:200;white-space:nowrap;}
-.toast.show{opacity:1;}
-
-.unsaved-badge{display:none;font-family:'Cinzel',serif;font-size:8px;letter-spacing:.1em;text-transform:uppercase;background:rgba(232,200,100,0.15);color:var(--gold);padding:3px 8px;border-radius:10px;border:0.5px solid var(--border-gold);}
-.has-changes .unsaved-badge{display:inline-block;}
+.setup-banner{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  background:rgba(232,125,125,0.12);
+  border-bottom:0.5px solid rgba(232,125,125,0.4);
+  color:#f4c0c0;
+  padding:14px 24px;
+  font-family:'Cinzel',serif;font-size:11px;letter-spacing:.04em;
+  text-align:center;line-height:1.6;
+}
+.setup-banner code{font-family:ui-monospace,Consolas,monospace;background:rgba(0,0,0,0.4);padding:1px 6px;border-radius:3px;font-size:10px}
 
 @media(max-width:600px){
-  .hero-title{font-size:32px;}
-  .entries-grid{grid-template-columns:1fr;}
-  .stat-row{flex-wrap:wrap;}
-  .stat-cell{min-width:50%;border-bottom:0.5px solid var(--border-gold);}
-  .stat-cell:nth-child(3),.stat-cell:nth-child(4){border-bottom:none;}
-  .hero-meta{gap:10px;}
-  .form-grid{grid-template-columns:1fr;}
-  .admin-bar{padding:8px 12px;}
-  .admin-active .page{padding-top:90px;}
+  .hero-title{font-size:32px}
+  .entries-grid{grid-template-columns:1fr}
+  .stat-row{flex-wrap:wrap}
+  .stat-cell{min-width:50%;border-bottom:0.5px solid var(--border-gold)}
+  .stat-cell:nth-child(3),.stat-cell:nth-child(4){border-bottom:none}
+  .hero-meta{gap:10px}
+  .form-grid{grid-template-columns:1fr}
+  .admin-bar{padding:8px 12px}
+  .admin-active .page{padding-top:90px}
 }
 
 @keyframes fade-down{from{opacity:0;transform:translateY(-16px)}to{opacity:1;transform:translateY(0)}}
@@ -208,17 +211,26 @@ body{
 <canvas id="star-canvas"></canvas>
 <div class="vignette"></div>
 
+<div id="setup-banner" class="setup-banner" style="display:none">
+ {
+  apiKey: "AIzaSyAL6tjMxm110SPNSKafDg5rN-P19GG8fbc",
+  authDomain: "the-grimoire-6a01f.firebaseapp.com",
+  projectId: "the-grimoire-6a01f",
+  storageBucket: "the-grimoire-6a01f.firebasestorage.app",
+  messagingSenderId: "595300251699",
+  appId: "1:595300251699:web:cc6ab80ff52a81c532cb46"
+}
+</div>
+
 <div id="admin-bar" class="admin-bar" style="display:none">
   <div class="admin-label">
-    <div class="admin-dot"></div>
+    <div class="admin-dot" id="admin-dot"></div>
     Admin mode
-    <span class="unsaved-badge">unsaved changes</span>
+    <span id="admin-status" style="font-family:'IM Fell English',serif;font-style:italic;font-size:11px;color:var(--text-muted);text-transform:none;letter-spacing:0;font-weight:normal"></span>
   </div>
   <div class="admin-actions">
     <button class="admin-btn primary" onclick="openAddModal()">+ Add entry</button>
     <button class="admin-btn primary" onclick="openAddRecordModal()">+ Add session record</button>
-    <button class="admin-btn" onclick="openExportModal()">Export to file</button>
-    <button class="admin-btn" onclick="resetToFile()">Reset</button>
     <button class="admin-btn" onclick="exitAdmin()">Exit</button>
   </div>
 </div>
@@ -298,7 +310,7 @@ body{
     <div class="footer-sub">
       Updated live each stream.<br>
       Watch the witch at
-      <a class="footer-channel" href="https://twitch.tv/faybee_baby" target="_blank" rel="noopener">twitch.tv/faybee_baby</a>
+      <a class="footer-channel" href="https://twitch.tv/faybee_baby" target="_blank" rel="noopener">twitch.tv/YourChannel</a>
     </div>
     <div class="footer-ornament">✦ · ✦ · ✦</div>
   </footer>
@@ -356,7 +368,7 @@ body{
     </div>
     <div class="modal-actions">
       <button class="admin-btn" onclick="closeEntryModal()">Cancel</button>
-      <button class="admin-btn primary" onclick="saveEntry()">✦ Bind to grimoire</button>
+      <button class="admin-btn primary" id="save-entry-btn" onclick="saveEntry()">✦ Bind to grimoire</button>
     </div>
   </div>
 </div>
@@ -396,145 +408,67 @@ body{
     </div>
     <div class="modal-actions">
       <button class="admin-btn" onclick="closeRecordModal()">Cancel</button>
-      <button class="admin-btn primary" onclick="saveRecord()">✦ Seal record</button>
-    </div>
-  </div>
-</div>
-
-<div class="modal-overlay" id="export-modal">
-  <div class="modal" style="max-width:680px">
-    <div class="modal-title">Export to file</div>
-    <div class="modal-subtitle">
-      Below is your updated GRIMOIRE_DATA block. Copy it, paste over the existing block in your HTML file (replace from <strong>const GRIMOIRE_DATA =</strong> through the matching closing <strong>};</strong>), save the file, and re-upload.
-    </div>
-    <textarea class="export-text" id="export-textarea" readonly></textarea>
-    <div class="modal-actions">
-      <button class="admin-btn" onclick="closeExportModal()">Close</button>
-      <button class="admin-btn primary" onclick="copyExport()">📋 Copy to clipboard</button>
+      <button class="admin-btn primary" id="save-record-btn" onclick="saveRecord()">✦ Seal record</button>
     </div>
   </div>
 </div>
 
 <div class="toast" id="toast"></div>
 
-<script>
+<script type="module">
+/* ════════════════════════════════════════════════════════════════════
+   ✏️  STEP 1 — PASTE YOUR FIREBASE CONFIG HERE
+   ════════════════════════════════════════════════════════════════════
+   When you create your Firebase project (see setup guide), Firebase
+   gives you a config object that looks like this:
+   
+   const firebaseConfig = {
+     apiKey: "AIzaSy...",
+     authDomain: "your-project.firebaseapp.com",
+     projectId: "your-project",
+     storageBucket: "your-project.firebasestorage.app",
+     messagingSenderId: "123456789",
+     appId: "1:123456789:web:abc123"
+   };
+   
+   Replace the FIREBASE_CONFIG_HERE block below with that object.
+   That's it. Once that's done, this site is fully live.
+   ════════════════════════════════════════════════════════════════════ */
+
+const firebaseConfig = "FIREBASE_CONFIG_HERE";
+
+/* ════════════════════════════════════════════════════════════════════
+   ✏️  STEP 2 — CHOOSE YOUR ADMIN PASSWORD
+   ════════════════════════════════════════════════════════════════════
+   To enter admin mode, visit your site with: ?coven=YOUR_PASSWORD
+   ════════════════════════════════════════════════════════════════════ */
+
 const ADMIN_PASSWORD = 'moonbind';
 
-const GRIMOIRE_DATA = {
-  entries: [
-    {
-       id: 1,
-      type: 'lore',
-      game: 'High on Life 2',
-      title: 'The Bounty Hunter Who Became the Hunted',
-      body: `Five years after saving humanity from the cartel, you're living the dream — famous, beloved, rich. Then a mysterious figure from your past resurfaces and puts a bounty on your sister Lizzie's head.\n\nThe twist: by trying to save her, you get framed. Suddenly YOU are the villain in the eyes of the galaxy. The hunter becomes the hunted.\n\nThe coven's read: this is a story about how the world punishes people who do the right thing when it's inconvenient for those in power.`,
-      session: 'The Awakening · New Moon',
-      tags: ['story', 'lizzie', 'bounty', 'lore'],
-      author: 'faybee_baby',
-      date: 'The Awakening'
-    },
-    {
-      id: 2,
-      type: 'lore',
-      game: 'High on Life 2',
-      title: 'Lizzie — Sister, Fighter, Fugitive',
-      body: `Lizzie has spent the five years since the cartel's fall building her own legend — as a freedom fighter (or terrorist, depending on who you ask). She's been dismantling corrupt systems across the galaxy.\n\nShe's not a damsel. She doesn't need saving. The coven has decided she is the true protagonist and we will defend her honor at all costs.\n\nThe mysterious figure who put the hit out on her clearly fears what she knows. We will find out what that is.`,
-      session: 'The Awakening · New Moon',
-      tags: ['lizzie', 'character', 'lore', 'freedom fighter'],
-      author: 'faybee_baby',
-      date: 'The Awakening'
-    },
-    {
-      id: 3,
-      type: 'lore',
-      game: 'High on Life 2',
-      title: 'Big Pharma Returns — The Conspiracy Deepens',
-      body: `The evil pharmaceutical conglomerate from game one was never fully dismantled. Someone has been quietly rebuilding it — this time with political cover. The villain has bought senators, rigged trade routes, and placed price tags back on human life.\n\nThe coven notes the uncomfortable parallel to reality.`,
-      session: 'The Awakening · New Moon',
-      tags: ['big pharma', 'villain', 'conspiracy', 'lore'],
-      author: 'faybee_baby',
-      date: 'The Awakening'
-    },
-    {
-      id: 4,
-      type: 'spell',
-      game: 'High on Life 2',
-      title: 'The Gatlians — Talking Weapons 101',
-      body: `Your entire arsenal is alive and opinionated. This time they have dialogue options — you can TALK BACK to your guns mid-combat.\n\nReturning weapons:\n• Knifey (Michael Cusack) — chaotic, feral, beloved\n• Sweezy (Betsy Sodaro) — the unhinged one\n• Gus (JB Smoove) — wisdom wrapped in ridiculousness\n\nNew this game:\n• Sheath (Ralph Ineson) — voiced by the man who played Death in Deadpool. We already fear and respect him.\n\nCoven rule: we name every Gatlian in the grimoire as we meet them.`,
-      session: 'The Awakening · New Moon',
-      tags: ['gatlians', 'weapons', 'knifey', 'gus', 'sweezy', 'sheath'],
-      author: 'faybee_baby',
-      date: 'The Awakening'
-    },
-    {
-      id: 5,
-      type: 'spell',
-      game: 'High on Life 2',
-      title: 'Movement Grimoire — What the Body Can Do',
-      body: `High on Life 2 significantly expanded traversal. The full toolkit:\n\n• Double jump — your bread and butter\n• Dash — invincibility frames if timed right\n• Slide — breaks enemy tracking\n• Grapple hook — reach anything, escape anything\n• Skateboard — new this game, used for speed and certain combat tricks\n\nCoven discovery: chaining slide → dash → grapple creates a near-invincible movement loop on most standard enemies.`,
-      session: 'The Awakening · New Moon',
-      tags: ['movement', 'skateboard', 'grapple', 'dash', 'mechanics'],
-      author: 'faybee_baby',
-      date: 'The Awakening'
-    },
-    {
-      id: 6,
-      type: 'bestiary',
-      game: 'High on Life 2',
-      title: 'Senator Muppy Doo — A Political Creature',
-      body: `One of the early bounty targets. A corrupt alien senator who has been taking pharmaceutical money to legislate against human rights.\n\nPhysically: squat, smug, draped in something resembling a toga made of sentient fabric that occasionally argues with him.\n\nThe coven's verdict: deeply satisfying to defeat. The fight itself is staged at what appears to be a campaign rally — enemies literally cheer him on while you fight.\n\nWeakness: mid-range Sweezy shots when he enters phase two. Knifey is useless here until he drops his shield.`,
-      session: 'The Awakening · New Moon',
-      tags: ['boss', 'senator muppy doo', 'satire', 'strategy'],
-      author: 'faybee_baby',
-      date: 'The Awakening'
-    },
-    {
-      id: 7,
-      type: 'bestiary',
-      game: 'High on Life 2',
-      title: 'The Bounty Network Enforcers',
-      body: `Standard enemies sent by the conspiracy to hunt you after you're framed. Three variants encountered so far:\n\n• Tracer units — fast, low HP, come in swarms. Knifey.\n• Shield carriers — Sweezy from distance to break the shield, then grapple close.\n• Heavies — slow, massive HP pool. Sheath seems most effective. The coven is still testing.\n\nThey all radio in before attacking. The dialogue is hilarious — they gossip about you. We will be transcribing the best ones.`,
-      session: 'The Awakening · New Moon',
-      tags: ['enemies', 'enforcers', 'strategy', 'bestiary'],
-      author: 'faybee_baby',
-      date: 'The Awakening'
-    },
-    {
-      id: 8,
-      type: 'mystery',
-      game: 'High on Life 2',
-      title: 'The Mysterious Figure — Who Put the Hit Out?',
-      body: `The inciting incident of the entire game and we still don't have a name or face. The figure is shown only in silhouette — tall, cloaked, speaking through a voice modulator.\n\nThey knew Lizzie was dangerous BEFORE she did anything to them. Which means they were watching her.\n\nCoven theories so far:\n🔮 A cartel survivor from game one seeking revenge\n🔮 Someone inside the bounty hunter establishment threatened by Lizzie's revelations\n🔮 A pharmaceutical company board member who has been hiding in plain sight\n\nWe will update this entry every session. The coven WILL crack this.`,
-      session: 'The Awakening · New Moon',
-      tags: ['mystery', 'villain', 'shadow', 'theories'],
-      author: 'faybee_baby',
-      date: 'The Awakening'
-    },
-    {
-      id: 9,
-      type: 'mystery',
-      game: 'High on Life 2',
-      title: 'The Alien Zoo for Humans',
-      body: `A location confirmed in the game's marketing: an alien zoo where humans are the exhibit.\n\nWe haven't reached it yet. But the coven has questions:\n\n🔮 Are the humans aware they're in a zoo?\n🔮 Is this connected to the pharmaceutical plot — are they being observed for drug research?\n🔮 Do we free them or is there a more complicated choice?\n\nThis entry will be completed when we arrive. Leave your theories in chat using !prophecy.`,
-      session: 'The Awakening · New Moon',
-      tags: ['mystery', 'zoo', 'humans', 'location'],
-      author: 'faybee_baby',
-      date: 'The Awakening'
-    },
-    {
-      id: 10,
-      type: 'record',
-      game: 'High on Life 2',
-      title: 'The Awakening — Session Zero',
-      body: `The coven reconvened after the long silence. The void is behind us.\n\nWhat we established:\n• The Grimoire is open and accepting entries\n• The !grimoire command is live — use it\n• Elders: your rank is preserved. Newcomers: welcome.\n\nFirst impressions: chaotic, funny, sharper writing than the first game. Knifey remains iconic. Sheath is already menacing.\n\nThe coven's decree: we play every session to completion before sealing the record. No rushed endings. The story deserves our full attention.`,
-      session: 'The Awakening · New Moon',
-      tags: ['session zero', 'opening', 'coven record'],
-      author: 'faybee_baby',
-      date: 'The Awakening'
-    }
-  ],
-  records: []
-};
+/* ════════════════════════════════════════════════════════════════════
+   The rest of the file is the engine. You don't need to edit anything
+   below this line.
+   ════════════════════════════════════════════════════════════════════ */
+
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+import {
+  getFirestore, collection, doc, getDoc, setDoc, addDoc, updateDoc, deleteDoc,
+  onSnapshot, query, orderBy, serverTimestamp, writeBatch
+} from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+
+// SEED DATA — used to populate Firestore on first run
+const SEED_ENTRIES = [
+  { type:'lore', game:'High on Life 2', title:'The Bounty Hunter Who Became the Hunted', body:`Five years after saving humanity from the cartel, you're living the dream — famous, beloved, rich. Then a mysterious figure from your past resurfaces and puts a bounty on your sister Lizzie's head.\n\nThe twist: by trying to save her, you get framed. Suddenly YOU are the villain in the eyes of the galaxy. The hunter becomes the hunted.\n\nThe coven's read: this is a story about how the world punishes people who do the right thing when it's inconvenient for those in power. Classic witch energy. We are taking notes.`, session:'The Awakening · New Moon', tags:['story','lizzie','bounty','lore'], author:'YourChannelName', date:'The Awakening', sortOrder:1 },
+  { type:'lore', game:'High on Life 2', title:'Lizzie — Sister, Fighter, Fugitive', body:`Lizzie has spent the five years since the cartel's fall building her own legend — as a freedom fighter (or terrorist, depending on who you ask). She's been dismantling corrupt systems across the galaxy.\n\nShe's not a damsel. She doesn't need saving. The coven has decided she is the true protagonist and we will defend her honor at all costs.\n\nThe mysterious figure who put the hit out on her clearly fears what she knows. We will find out what that is.`, session:'The Awakening · New Moon', tags:['lizzie','character','lore','freedom fighter'], author:'YourChannelName', date:'The Awakening', sortOrder:2 },
+  { type:'lore', game:'High on Life 2', title:'Big Pharma Returns — The Conspiracy Deepens', body:`The evil pharmaceutical conglomerate from game one was never fully dismantled. Someone has been quietly rebuilding it — this time with political cover. The villain has bought senators, rigged trade routes, and placed price tags back on human life.\n\nThe coven notes the uncomfortable parallel to reality. We will be making commentary. Frequently.`, session:'The Awakening · New Moon', tags:['big pharma','villain','conspiracy','lore'], author:'YourChannelName', date:'The Awakening', sortOrder:3 },
+  { type:'spell', game:'High on Life 2', title:'The Gatlians — Talking Weapons 101', body:`Your entire arsenal is alive and opinionated. This time they have dialogue options — you can TALK BACK to your guns mid-combat.\n\nReturning weapons:\n• Knifey (Michael Cusack) — chaotic, feral, beloved\n• Sweezy (Betsy Sodaro) — the unhinged one\n• Gus (JB Smoove) — wisdom wrapped in ridiculousness\n\nNew this game:\n• Sheath (Ralph Ineson) — voiced by the man who played Death in Deadpool. We already fear and respect him.\n\nCoven rule: we name every Gatlian in the grimoire as we meet them. This is sacred.`, session:'The Awakening · New Moon', tags:['gatlians','weapons','knifey','gus','sweezy','sheath'], author:'YourChannelName', date:'The Awakening', sortOrder:4 },
+  { type:'spell', game:'High on Life 2', title:'Movement Grimoire — What the Body Can Do', body:`High on Life 2 significantly expanded traversal. The full toolkit:\n\n• Double jump — your bread and butter\n• Dash — invincibility frames if timed right\n• Slide — breaks enemy tracking\n• Grapple hook — reach anything, escape anything\n• Skateboard — new this game, used for speed and certain combat tricks\n\nCoven discovery: chaining slide → dash → grapple creates a near-invincible movement loop on most standard enemies. We are calling this The Coven's Broom.`, session:'The Awakening · New Moon', tags:['movement','skateboard','grapple','dash','mechanics'], author:'YourChannelName', date:'The Awakening', sortOrder:5 },
+  { type:'bestiary', game:'High on Life 2', title:'Senator Muppy Doo — A Political Creature', body:`One of the early bounty targets. A corrupt alien senator who has been taking pharmaceutical money to legislate against human rights.\n\nPhysically: squat, smug, draped in something resembling a toga made of sentient fabric that occasionally argues with him.\n\nThe coven's verdict: deeply satisfying to defeat. The fight itself is staged at what appears to be a campaign rally — enemies literally cheer him on while you fight. The game understands satire.\n\nWeakness: mid-range Sweezy shots when he enters phase two. Knifey is useless here until he drops his shield.`, session:'The Awakening · New Moon', tags:['boss','senator muppy doo','satire','strategy'], author:'YourChannelName', date:'The Awakening', sortOrder:6 },
+  { type:'bestiary', game:'High on Life 2', title:'The Bounty Network Enforcers', body:`Standard enemies sent by the conspiracy to hunt you after you're framed. Three variants encountered so far:\n\n• Tracer units — fast, low HP, come in swarms. Knifey.\n• Shield carriers — Sweezy from distance to break the shield, then grapple close.\n• Heavies — slow, massive HP pool. Sheath seems most effective. The coven is still testing.\n\nThey all radio in before attacking. The dialogue is hilarious — they gossip about you. We will be transcribing the best ones.`, session:'The Awakening · New Moon', tags:['enemies','enforcers','strategy','bestiary'], author:'YourChannelName', date:'The Awakening', sortOrder:7 },
+  { type:'mystery', game:'High on Life 2', title:'The Mysterious Figure — Who Put the Hit Out?', body:`The inciting incident of the entire game and we still don't have a name or face. The figure is shown only in silhouette — tall, cloaked, speaking through a voice modulator.\n\nThey knew Lizzie was dangerous BEFORE she did anything to them. Which means they were watching her.\n\nCoven theories so far:\n🔮 A cartel survivor from game one seeking revenge\n🔮 Someone inside the bounty hunter establishment threatened by Lizzie's revelations\n🔮 A pharmaceutical company board member who has been hiding in plain sight\n\nWe will update this entry every session. The coven WILL crack this.`, session:'The Awakening · New Moon', tags:['mystery','villain','shadow','theories'], author:'YourChannelName', date:'The Awakening', sortOrder:8 },
+  { type:'mystery', game:'High on Life 2', title:'The Alien Zoo for Humans', body:`A location confirmed in the game's marketing: an alien zoo where humans are the exhibit.\n\nWe haven't reached it yet. But the coven has questions:\n\n🔮 Are the humans aware they're in a zoo?\n🔮 Is this connected to the pharmaceutical plot — are they being observed for drug research?\n🔮 Do we free them or is there a more complicated choice?\n\nThis entry will be completed when we arrive. Leave your theories in chat using !prophecy.`, session:'The Awakening · New Moon', tags:['mystery','zoo','humans','location'], author:'YourChannelName', date:'The Awakening', sortOrder:9 },
+  { type:'record', game:'High on Life 2', title:'The Awakening — Session Zero', body:`The coven reconvened after the long silence. The void is behind us.\n\nWhat we established:\n• The Grimoire is open and accepting entries\n• The !grimoire command is live — use it\n• Elders: your rank is preserved. Newcomers: welcome.\n• The !prophecy poll chose High on Life 2 as our first moon cycle\n\nFirst impressions: chaotic, funny, sharper writing than the first game. Knifey remains iconic. Sheath is already menacing.\n\nThe coven's decree: we play every session to completion before sealing the record. No rushed endings. The story deserves our full attention.`, session:'The Awakening · New Moon', tags:['session zero','opening','coven record'], author:'YourChannelName', date:'The Awakening', sortOrder:10 },
+];
 
 const TYPE_META = {
   lore:     { icon:'📜', label:'Lore',     orb:'orb-lore'     },
@@ -547,13 +481,94 @@ const TYPE_META = {
 let entries = [];
 let records = [];
 let activeFilter = 'all';
-let expandedId   = null;
+let expandedId = null;
 let isAdmin = false;
-let hasChanges = false;
 let editingId = null;
 let editingRecordId = null;
+let db = null;
+let firebaseReady = false;
 
-const STORAGE_KEY = 'grimoire-admin-overlay-v1';
+// Check if config is set
+function isConfigured() {
+  return typeof firebaseConfig === 'object' && firebaseConfig.apiKey;
+}
+
+async function initFirebase() {
+  if (!isConfigured()) {
+    document.getElementById('setup-banner').style.display = 'block';
+    document.body.style.paddingTop = '60px';
+    document.getElementById('entries-grid').innerHTML = `<div class="empty">
+      <span class="empty-glyph">⚙️</span>
+      <div class="empty-title">Firebase not configured</div>
+      <div class="empty-sub">Open this file in a text editor and paste your Firebase config. See the setup guide for details.</div>
+    </div>`;
+    return false;
+  }
+
+  try {
+    const app = initializeApp(firebaseConfig);
+    db = getFirestore(app);
+    firebaseReady = true;
+
+    // Check if seed data exists; if not, populate it
+    await ensureSeedData();
+
+    // Subscribe to live updates
+    subscribeToEntries();
+    subscribeToRecords();
+
+    return true;
+  } catch (e) {
+    console.error('Firebase init failed:', e);
+    document.getElementById('entries-grid').innerHTML = `<div class="empty">
+      <span class="empty-glyph">⚠️</span>
+      <div class="empty-title">Could not connect to the tome</div>
+      <div class="empty-sub">${escHtml(e.message || 'Check your Firebase config and Firestore rules.')}</div>
+    </div>`;
+    return false;
+  }
+}
+
+async function ensureSeedData() {
+  try {
+    const seedDoc = await getDoc(doc(db, 'meta', 'seeded'));
+    if (seedDoc.exists()) return;
+
+    // Seed not yet run — write seed entries
+    const batch = writeBatch(db);
+    SEED_ENTRIES.forEach(entry => {
+      const newRef = doc(collection(db, 'entries'));
+      batch.set(newRef, {
+        ...entry,
+        createdAt: serverTimestamp()
+      });
+    });
+    batch.set(doc(db, 'meta', 'seeded'), { at: serverTimestamp() });
+    await batch.commit();
+    console.log('Seed entries planted in the grimoire.');
+  } catch (e) {
+    console.warn('Could not seed:', e);
+  }
+}
+
+function subscribeToEntries() {
+  const q = query(collection(db, 'entries'), orderBy('sortOrder', 'desc'));
+  onSnapshot(q, (snapshot) => {
+    entries = snapshot.docs.map(d => ({ id: d.id, ...d.data() }));
+    renderAll();
+  }, (e) => {
+    console.error('Entries subscription error:', e);
+    showToast('Connection issue. Retrying…', true);
+  });
+}
+
+function subscribeToRecords() {
+  const q = query(collection(db, 'records'), orderBy('createdAt', 'desc'));
+  onSnapshot(q, (snapshot) => {
+    records = snapshot.docs.map(d => ({ id: d.id, ...d.data() }));
+    renderAll();
+  });
+}
 
 function checkAdminMode(){
   const params = new URLSearchParams(window.location.search);
@@ -562,52 +577,24 @@ function checkAdminMode(){
     isAdmin = true;
     document.body.classList.add('admin-active');
     document.getElementById('admin-bar').style.display = 'flex';
+    updateAdminStatus();
+  }
+}
+
+function updateAdminStatus() {
+  const dot = document.getElementById('admin-dot');
+  const status = document.getElementById('admin-status');
+  if (firebaseReady) {
+    dot.classList.remove('offline');
+    status.textContent = '· connected';
+  } else {
+    dot.classList.add('offline');
+    status.textContent = '· offline';
   }
 }
 
 function exitAdmin(){
-  if(hasChanges && !confirm('You have unsaved changes that won\'t be in the file. Exit anyway?')) return;
   window.location.href = window.location.pathname;
-}
-
-function loadData(){
-  entries = JSON.parse(JSON.stringify(GRIMOIRE_DATA.entries || []));
-  records = JSON.parse(JSON.stringify(GRIMOIRE_DATA.records || []));
-
-  if(isAdmin){
-    try {
-      const overlay = localStorage.getItem(STORAGE_KEY);
-      if(overlay){
-        const data = JSON.parse(overlay);
-        if(data.entries) entries = data.entries;
-        if(data.records) records = data.records;
-        hasChanges = !!data.hasChanges;
-        updateChangeBadge();
-      }
-    } catch(e){ console.warn('Could not load admin overlay', e); }
-  }
-}
-
-function saveOverlay(){
-  if(!isAdmin) return;
-  hasChanges = true;
-  updateChangeBadge();
-  try {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify({ entries, records, hasChanges }));
-  } catch(e){ console.warn('Could not save overlay', e); }
-}
-
-function updateChangeBadge(){
-  document.body.classList.toggle('has-changes', hasChanges);
-}
-
-function resetToFile(){
-  if(!confirm('Discard all your local changes and reset to the file\'s baked-in data?')) return;
-  localStorage.removeItem(STORAGE_KEY);
-  hasChanges = false;
-  loadData();
-  renderAll();
-  showToast('Reset to file data');
 }
 
 function renderAll(){
@@ -616,6 +603,7 @@ function renderAll(){
   renderEntries();
   renderMysteries();
   renderLatestSession();
+  if (isAdmin) updateAdminStatus();
 }
 
 function getMoonPhase(){
@@ -640,18 +628,19 @@ function updateStats(){
   document.getElementById('s-sessions').textContent=records.length;
 }
 
-function setFilter(f,el){
+window.setFilter = function(f,el){
   activeFilter=f;
   document.querySelectorAll('.chip').forEach(c=>c.classList.remove('active'));
   el.classList.add('active');
   renderEntries();
-}
+};
 
 function renderEntries(){
+  if (!entries.length && !firebaseReady) return; // keep loading state
   const q=(document.getElementById('search').value||'').toLowerCase();
   const filtered=entries.filter(e=>{
     if(activeFilter!=='all'&&e.type!==activeFilter)return false;
-    if(q&&!e.title.toLowerCase().includes(q)&&!e.body.toLowerCase().includes(q)&&!(e.game||'').toLowerCase().includes(q))return false;
+    if(q&&!(e.title||'').toLowerCase().includes(q)&&!(e.body||'').toLowerCase().includes(q)&&!(e.game||'').toLowerCase().includes(q))return false;
     return true;
   });
   const grid=document.getElementById('entries-grid');
@@ -665,20 +654,20 @@ function renderEntries(){
 function cardHTML(e){
   const m=TYPE_META[e.type]||TYPE_META.lore;
   const isExp=expandedId===e.id;
-  const peek=e.body.replace(/\n/g,' ').substring(0,130)+(e.body.length>130?'…':'');
+  const peek=(e.body||'').replace(/\n/g,' ').substring(0,130)+((e.body||'').length>130?'…':'');
   const tags=(e.tags||[]).map(t=>`<span class="card-tag">${escHtml(t)}</span>`).join('');
-  return `<div class="entry-card${isExp?' expanded':''}" onclick="toggleExpand(${e.id})">
+  return `<div class="entry-card${isExp?' expanded':''}" onclick="toggleExpand('${e.id}')">
     <div class="card-top">
       <div class="type-orb ${m.orb}">${m.icon}</div>
       <div class="card-meta">
         <div class="card-type-label">${m.label}</div>
-        <div class="card-title">${escHtml(e.title)}</div>
+        <div class="card-title">${escHtml(e.title||'')}</div>
         ${e.game?`<div class="card-game">${escHtml(e.game)}</div>`:''}
         ${e.session?`<div class="card-session">${escHtml(e.session)}</div>`:''}
       </div>
     </div>
     ${isExp
-      ? `<div class="card-body">${escHtml(e.body)}</div>
+      ? `<div class="card-body">${escHtml(e.body||'')}</div>
          ${tags?`<div class="card-tags">${tags}</div>`:''}
          <div class="card-footer">
            <div>
@@ -686,8 +675,8 @@ function cardHTML(e){
              <div class="card-date">${escHtml(e.date||'')}</div>
            </div>
            <div class="card-admin" onclick="event.stopPropagation()">
-             <button class="card-admin-btn" onclick="editEntry(${e.id})">✎ Edit</button>
-             <button class="card-admin-btn danger" onclick="deleteEntry(${e.id})">✕ Delete</button>
+             <button class="card-admin-btn" onclick="editEntry('${e.id}')">✎ Edit</button>
+             <button class="card-admin-btn danger" onclick="deleteEntry('${e.id}')">✕ Delete</button>
            </div>
          </div>`
       : `<div class="card-peek">${escHtml(peek)}</div>
@@ -696,7 +685,7 @@ function cardHTML(e){
   </div>`;
 }
 
-function toggleExpand(id){
+window.toggleExpand = function(id){
   expandedId=expandedId===id?null:id;
   renderEntries();
   if(expandedId){
@@ -705,7 +694,7 @@ function toggleExpand(id){
       if(el)el.scrollIntoView({behavior:'smooth',block:'nearest'});
     },60);
   }
-}
+};
 
 function renderMysteries(){
   const mysteries=entries.filter(e=>e.type==='mystery');
@@ -717,7 +706,7 @@ function renderMysteries(){
     <div class="mystery-row">
       <span class="mystery-glyph">🔮</span>
       <div>
-        <div class="mystery-title">${escHtml(m.title)}</div>
+        <div class="mystery-title">${escHtml(m.title||'')}</div>
         <div class="mystery-sub">${escHtml(m.game||'')}${m.session?' · '+escHtml(m.session):''}</div>
       </div>
     </div>
@@ -731,7 +720,7 @@ function renderLatestSession(){
   banner.style.display='block';
   const r=records[0];
   content.innerHTML=`
-    <div class="session-name">${escHtml(r.session)}</div>
+    <div class="session-name">${escHtml(r.session||'')}</div>
     <div class="session-game">${escHtml(r.game||'')} · ${escHtml(r.date||'')}</div>
     ${r.learned?`<div class="session-field"><div class="session-field-label">What the coven learned</div><div class="session-field-body">${escHtml(r.learned)}</div></div>`:''}
     ${r.moments?`<div class="session-field"><div class="session-field-label">Memorable moments</div><div class="session-field-body">${escHtml(r.moments)}</div></div>`:''}
@@ -739,7 +728,7 @@ function renderLatestSession(){
   `;
 }
 
-function openAddModal(){
+window.openAddModal = function(){
   if(!isAdmin)return;
   editingId=null;
   document.getElementById('entry-modal-title').textContent='Inscribe new knowledge';
@@ -748,15 +737,15 @@ function openAddModal(){
   document.getElementById('f-date').value=new Date().toLocaleDateString('en-GB',{day:'numeric',month:'long',year:'numeric'});
   document.getElementById('entry-modal').classList.add('open');
   document.getElementById('f-title').focus();
-}
+};
 
-function editEntry(id){
+window.editEntry = function(id){
   if(!isAdmin)return;
   const e=entries.find(x=>x.id===id);
   if(!e)return;
   editingId=id;
   document.getElementById('entry-modal-title').textContent='Edit entry';
-  document.getElementById('f-type').value=e.type;
+  document.getElementById('f-type').value=e.type||'lore';
   document.getElementById('f-game').value=e.game||'';
   document.getElementById('f-title').value=e.title||'';
   document.getElementById('f-body').value=e.body||'';
@@ -765,51 +754,69 @@ function editEntry(id){
   document.getElementById('f-author').value=e.author||'';
   document.getElementById('f-date').value=e.date||'';
   document.getElementById('entry-modal').classList.add('open');
-}
+};
 
-function closeEntryModal(){
+window.closeEntryModal = function(){
   document.getElementById('entry-modal').classList.remove('open');
-}
+};
 
-function saveEntry(){
+window.saveEntry = async function(){
+  if (!firebaseReady) { showToast('Not connected — check Firebase config', true); return; }
   const title=document.getElementById('f-title').value.trim();
   const body=document.getElementById('f-body').value.trim();
-  if(!title||!body){showToast('Title and knowledge are required');return;}
+  if(!title||!body){showToast('Title and knowledge are required',true);return;}
   const tags=document.getElementById('f-tags').value.split(',').map(t=>t.trim()).filter(Boolean);
   const data={
     type:document.getElementById('f-type').value,
     game:document.getElementById('f-game').value.trim(),
     title,body,tags,
     session:document.getElementById('f-session').value.trim(),
-    author:document.getElementById('f-author').value.trim()||'faybee_baby',
+    author:document.getElementById('f-author').value.trim()||'YourChannelName',
     date:document.getElementById('f-date').value.trim()||new Date().toLocaleDateString('en-GB',{day:'numeric',month:'long',year:'numeric'}),
   };
-  if(editingId!==null){
-    const idx=entries.findIndex(e=>e.id===editingId);
-    if(idx>=0)entries[idx]={...entries[idx],...data};
-    showToast('✦ Entry updated');
-  }else{
-    const maxId=Math.max(0,...entries.map(e=>e.id||0));
-    entries.unshift({id:maxId+1,...data});
-    showToast('✦ Knowledge bound to the grimoire');
-  }
-  saveOverlay();
-  closeEntryModal();
-  renderAll();
-}
 
-function deleteEntry(id){
-  if(!isAdmin)return;
+  const btn = document.getElementById('save-entry-btn');
+  btn.disabled = true; btn.textContent = '✦ Binding…';
+
+  try {
+    if(editingId){
+      // Edit existing — keep its sortOrder
+      await updateDoc(doc(db,'entries',editingId), { ...data, updatedAt: serverTimestamp() });
+      showToast('✦ Entry updated');
+    } else {
+      // New — give it a sortOrder higher than the highest existing
+      const maxSort = Math.max(0, ...entries.map(e=>e.sortOrder||0));
+      await addDoc(collection(db,'entries'), {
+        ...data,
+        sortOrder: maxSort + 1,
+        createdAt: serverTimestamp()
+      });
+      showToast('✦ Knowledge bound to the grimoire');
+    }
+    closeEntryModal();
+  } catch (e) {
+    console.error(e);
+    showToast('Could not save: ' + (e.message || 'unknown error'), true);
+  } finally {
+    btn.disabled = false; btn.textContent = '✦ Bind to grimoire';
+  }
+};
+
+window.deleteEntry = async function(id){
+  if(!isAdmin || !firebaseReady)return;
   const e=entries.find(x=>x.id===id);
   if(!e)return;
-  if(!confirm(`Unbind "${e.title}" from the grimoire? This is local only — won't affect the file until you Export.`))return;
-  entries=entries.filter(x=>x.id!==id);
-  saveOverlay();
-  renderAll();
-  showToast('Entry unbound');
-}
+  if(!confirm(`Unbind "${e.title}" from the grimoire? This is permanent.`))return;
+  try {
+    await deleteDoc(doc(db,'entries',id));
+    showToast('Entry unbound');
+  } catch (err) {
+    console.error(err);
+    showToast('Could not delete: ' + err.message, true);
+  }
+};
 
-function openAddRecordModal(){
+window.openAddRecordModal = function(){
   if(!isAdmin)return;
   editingRecordId=null;
   document.getElementById('record-modal-title').textContent='Seal a session record';
@@ -817,15 +824,16 @@ function openAddRecordModal(){
   document.getElementById('r-date').value=new Date().toLocaleDateString('en-GB',{day:'numeric',month:'long',year:'numeric'});
   document.getElementById('record-modal').classList.add('open');
   document.getElementById('r-session').focus();
-}
+};
 
-function closeRecordModal(){
+window.closeRecordModal = function(){
   document.getElementById('record-modal').classList.remove('open');
-}
+};
 
-function saveRecord(){
+window.saveRecord = async function(){
+  if (!firebaseReady) { showToast('Not connected — check Firebase config', true); return; }
   const session=document.getElementById('r-session').value.trim();
-  if(!session){showToast('Session name is required');return;}
+  if(!session){showToast('Session name is required',true);return;}
   const data={
     session,
     game:document.getElementById('r-game').value.trim(),
@@ -834,90 +842,21 @@ function saveRecord(){
     mysteries:document.getElementById('r-mysteries').value.trim(),
     date:document.getElementById('r-date').value.trim()||new Date().toLocaleDateString('en-GB',{day:'numeric',month:'long',year:'numeric'}),
   };
-  if(editingRecordId!==null){
-    const idx=records.findIndex(r=>r.id===editingRecordId);
-    if(idx>=0)records[idx]={...records[idx],...data};
-    showToast('✦ Record updated');
-  }else{
-    const maxId=Math.max(0,...records.map(r=>r.id||0));
-    records.unshift({id:maxId+1,...data});
+
+  const btn = document.getElementById('save-record-btn');
+  btn.disabled = true; btn.textContent = '✦ Sealing…';
+
+  try {
+    await addDoc(collection(db,'records'), { ...data, createdAt: serverTimestamp() });
     showToast('✦ Session sealed');
+    closeRecordModal();
+  } catch (e) {
+    console.error(e);
+    showToast('Could not save: ' + e.message, true);
+  } finally {
+    btn.disabled = false; btn.textContent = '✦ Seal record';
   }
-  saveOverlay();
-  closeRecordModal();
-  renderAll();
-}
-
-function openExportModal(){
-  if(!isAdmin)return;
-  document.getElementById('export-textarea').value=generateExportCode();
-  document.getElementById('export-modal').classList.add('open');
-}
-
-function closeExportModal(){
-  document.getElementById('export-modal').classList.remove('open');
-}
-
-function generateExportCode(){
-  const formatString=(s)=>{
-    if(s==null)return "''";
-    const str=String(s);
-    if(str.includes('\n')){
-      return '`'+str.replace(/\\/g,'\\\\').replace(/`/g,'\\`').replace(/\$\{/g,'\\${')+'`';
-    }
-    return "'"+str.replace(/\\/g,'\\\\').replace(/'/g,"\\'")+"'";
-  };
-  const formatTags=(tags)=>{
-    if(!tags||!tags.length)return '[]';
-    return '['+tags.map(t=>"'"+String(t).replace(/'/g,"\\'")+"'").join(', ')+']';
-  };
-  const entryToCode=(e)=>{
-    return `    {
-      id: ${e.id},
-      type: '${e.type}',
-      game: ${formatString(e.game||'')},
-      title: ${formatString(e.title||'')},
-      body: ${formatString(e.body||'')},
-      session: ${formatString(e.session||'')},
-      tags: ${formatTags(e.tags)},
-      author: ${formatString(e.author||'')},
-      date: ${formatString(e.date||'')}
-    }`;
-  };
-  const recordToCode=(r)=>{
-    return `    {
-      id: ${r.id},
-      session: ${formatString(r.session||'')},
-      game: ${formatString(r.game||'')},
-      learned: ${formatString(r.learned||'')},
-      moments: ${formatString(r.moments||'')},
-      mysteries: ${formatString(r.mysteries||'')},
-      date: ${formatString(r.date||'')}
-    }`;
-  };
-  const entriesCode=entries.map(entryToCode).join(',\n');
-  const recordsCode=records.length?records.map(recordToCode).join(',\n'):'    /* No records yet */';
-  return `const GRIMOIRE_DATA = {
-  entries: [
-${entriesCode}
-  ],
-  records: [
-${recordsCode}
-  ]
-};`;
-}
-
-function copyExport(){
-  const ta=document.getElementById('export-textarea');
-  ta.select();
-  ta.setSelectionRange(0,99999);
-  navigator.clipboard.writeText(ta.value).then(()=>{
-    showToast('✦ Copied — paste into your file');
-  }).catch(()=>{
-    document.execCommand('copy');
-    showToast('Copied');
-  });
-}
+};
 
 function escHtml(str){
   return String(str)
@@ -928,28 +867,29 @@ function escHtml(str){
 }
 
 let toastTimer;
-function showToast(msg){
+function showToast(msg, isError){
   const el=document.getElementById('toast');
   el.textContent=msg;
+  el.classList.toggle('error', !!isError);
   el.classList.add('show');
   clearTimeout(toastTimer);
-  toastTimer=setTimeout(()=>el.classList.remove('show'),2500);
+  toastTimer=setTimeout(()=>el.classList.remove('show'),3000);
 }
 
 document.addEventListener('keydown',(e)=>{
   if(e.key==='Escape'){
     closeEntryModal();
     closeRecordModal();
-    closeExportModal();
   }
 });
-['entry-modal','record-modal','export-modal'].forEach(id=>{
+['entry-modal','record-modal'].forEach(id=>{
   const el=document.getElementById(id);
   el.addEventListener('click',(e)=>{
     if(e.target===el)el.classList.remove('open');
   });
 });
 
+// STARFIELD
 (function(){
   const canvas=document.getElementById('star-canvas');
   const ctx=canvas.getContext('2d');
@@ -978,9 +918,9 @@ document.addEventListener('keydown',(e)=>{
   draw();
 })();
 
+// INIT
 checkAdminMode();
-loadData();
-renderAll();
+initFirebase();
 </script>
 </body>
 </html>
